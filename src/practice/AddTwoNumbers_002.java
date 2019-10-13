@@ -9,7 +9,7 @@ package practice;
 原因：342 + 465 = 807
  */
 public class AddTwoNumbers_002 {
-	public class ListNode {
+	public class ListNode {  
 		int val;
 		ListNode next;
 

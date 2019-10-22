@@ -25,4 +25,19 @@ public class LengthOfLongestSubstring_003 {
 		LengthOfLongestSubstring_003 lel = new LengthOfLongestSubstring_003();
 		System.out.println(lel.lengthOfLongestSubstring(a));
 	}
+
+	public int lenthOfLongestSubstringPrac(String str) {
+		Map<Character,Integer> map = new HashMap<Character, Integer>();
+		int n = str.length();
+		int ans = 0;
+		for (int end = 0,start = 0; end < n; end++) {
+			char a = str.charAt(end);
+			if(map.containsKey(a)) {
+				start = Math.max(map.get(a), start);
+			}
+			ans = Math.max(ans, end-start+1);
+			map.put(str.charAt(end), end +1);
+		}
+		return ans;
+	}
 }
